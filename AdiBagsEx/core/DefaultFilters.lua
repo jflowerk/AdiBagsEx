@@ -26,8 +26,21 @@ function addon:SetupDefaultFilters()
 	--<GLOBALS
 	local _G = _G
 	local BANK_CONTAINER = _G.BANK_CONTAINER or ( Enum.BagIndex and Enum.BagIndex.Bank ) or -1
-	local BANK_CONTAINER_INVENTORY_OFFSET = _G.BANK_CONTAINER_INVENTORY_OFFSET
-	local EquipmentManager_UnpackLocation = _G.EquipmentManager_UnpackLocation
+	local BANK_CONTAINER_INVENTORY_OFFSET = _G.BANK_CONTAINER_INVENTORY_OFFSET or 28
+	local EquipmentManager_UnpackLocation = _G.EquipmentManager_UnpackLocation or function(location)
+		if location < 0 then return end
+		local player = bit.band(location, 0x100000) ~= 0
+		local bank = bit.band(location, 0x200000) ~= 0
+		local bags = bit.band(location, 0x400000) ~= 0
+		local voidstorage = bit.band(location, 0x800000) ~= 0
+		local slot = bit.band(location, 0xFFFF)
+		local container = nil
+		if bags then
+			container = bit.rshift(bit.band(slot, 0xFF00), 8)
+			slot = bit.band(slot, 0xFF)
+		end
+		return player, bank, bags, voidstorage, slot, container
+	end
 	local format = _G.format
 	local GetContainerItemQuestInfo = C_Container and _G.C_Container.GetContainerItemQuestInfo or _G.GetContainerItemQuestInfo
 	local GetEquipmentSetInfo = _G.C_EquipmentSet.GetEquipmentSetInfo
