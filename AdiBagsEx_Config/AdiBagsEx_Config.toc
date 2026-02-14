@@ -1,0 +1,24 @@
+## Interface: 120000, 120001
+
+## Title: AdiBagsEx Configuration
+## Notes: Enhanced AdiBags configuration panel. Original by Adirelle.
+## IconAtlas: bag-main
+## Author: elemstream
+## Version: 0.1.3
+## X-Date: 2025-08-28
+## X-Part-Of: AdiBagsEx
+## LoadOnDemand: 1
+## Dependencies: AdiBagsEx
+## OptionalDeps: AceGUI-3.0-SharedMediaWidgets
+
+#@no-lib-strip@
+..\AdiBagsEx\libs\AceDBOptions-3.0\AceDBOptions-3.0.xml
+..\AdiBagsEx\libs\AceGUI-3.0\AceGUI-3.0.xml
+..\AdiBagsEx\libs\AceConfig-3.0\AceConfig-3.0.xml
+..\AdiBagsEx\libs\AceGUI-3.0-SharedMediaWidgets\widget.xml
+#@end-no-lib-strip@
+
+..\AdiBagsEx\config\Config-ItemList.lua
+..\AdiBagsEx\config\Options.lua
+
+
