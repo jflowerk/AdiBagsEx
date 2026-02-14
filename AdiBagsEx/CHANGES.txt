@@ -1,0 +1,35 @@
+﻿AdiBagsEx Changes - WoW 11.2.0 Compatibility Update
+Author: elemstream (https://www.twitch.tv/elemstream)
+Date: August 11, 2025
+
+AdiBagsEx v1.10.30-11.2.0 - WoW 11.2.0 Compatibility
+- Updated for WoW Interface version 110200 (The War Within 11.2.0)
+- Fixed addon loading errors by updating missing constants
+- Added fallback compatibility for removed WoW APIs
+- Fixed event system compatibility (PLAYERREAGENTBANKSLOTS_CHANGED removal)
+- Implemented Reagent Bank removal handling for WoW 11.2.0+
+- Updated bank opening functionality for modern WoW API
+- Added progressive fallback strategy for API compatibility
+- Disabled Reagent Bank features for WoW 11.2.0+ (system removed by Blizzard)
+- Renamed addon from AdiBags to AdiBagsEx
+- Updated author attribution and licensing information
+
+Previous Version:
+tag 14e886b1708682ab6ed89af17663162df8716a12 v1.10.29
+Author:	Talyrius <contact@talyrius.net>
+Date:	Sat Sep 7 19:19:48 2024 -0700
+
+commit 10808e8343d69e165c64c0983be22d8c766b9cbe
+Author: Talyrius <contact@talyrius.net>
+Date:   Sat Sep 7 19:17:32 2024 -0700
+
+    Implemented support for the `AddonCompartmentFrame`.
+
+commit 1961cbc4c51bd5aabe2b833d0262669c71fdc493
+Author: Talyrius <contact@talyrius.net>
+Date:   Sat Sep 7 18:50:14 2024 -0700
+
+    Updated for Patch 11.0.2.
+    
+    Closes #1021 and #1022.
+
