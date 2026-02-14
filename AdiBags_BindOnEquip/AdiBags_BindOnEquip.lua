@@ -3,7 +3,7 @@ local addonName, addonTable = ...
 local AdiBags = LibStub('AceAddon-3.0'):GetAddon('AdiBagsEx')
 
 -- 필터 등록 (이름과 설명)
-local filter = AdiBags:RegisterFilter('BindOnEquip', 90, 'AceEvent-3.0')
+local filter = AdiBags:RegisterFilter('BindOnEquip', 90, 'ABEvent-1.0')
 filter.uiName = "착귀템 · 전투귀속 · 공대거래템 · 내부전쟁 · 제작템 · 귀속 장비"
 filter.uiDesc = "착용 시 귀속 / 착용 전 전투귀속 / 공대 거래 가능 아이템 / 내부전쟁 아이템 / 제작 아이템 / 착용 후 귀속 장비 분류"
 
