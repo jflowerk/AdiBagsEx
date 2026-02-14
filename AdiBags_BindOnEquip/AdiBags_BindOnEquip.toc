@@ -1,0 +1,7 @@
+## Interface: 110002
+## Title: AdiBags - 착귀 아이템 필터
+## Notes: AdiBags에서 "착용 시 귀속" 상태 아이템을 필터링하는 플러그인.
+## Version: 1.0
+## Author: 작성자이름
+## RequiredDeps: AdiBagsEx
+AdiBags_BindOnEquip.lua
