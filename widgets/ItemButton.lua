@@ -94,8 +94,8 @@ function buttonProto:OnCreate()
 	end
 	self:RegisterForDrag("LeftButton")
 	self:RegisterForClicks("LeftButtonUp","RightButtonUp")
-	self:SetScript('OnShow', self._OnShow)
-	self:SetScript('OnHide', self._OnHide)
+	self:HookScript('OnShow', self._OnShow)
+	self:HookScript('OnHide', self._OnHide)
 	self:SetWidth(ITEM_SIZE)
 	self:SetHeight(ITEM_SIZE)
 	self.EmptySlotTextureFile = addon.EMPTY_SLOT_FILE
@@ -105,7 +105,7 @@ function buttonProto:OnCreate()
 	self.SplitStack = nil -- Remove the function set up by the template
 	
 	-- Override drag/drop behavior for proper warband bank targeting
-	self:SetScript('OnReceiveDrag', self.OnReceiveDrag)
+	self:HookScript('OnReceiveDrag', self.OnReceiveDrag)
 end
 
 function buttonProto:OnAcquire(container, bag, slot)
@@ -164,11 +164,10 @@ function buttonProto:OnReceiveDrag()
 			end
 		end
 	end
-	
-	-- Fall back to default template behavior for non-warband slots or occupied slots
-	-- Use the standard ContainerFrameItemButton_OnClick behavior
-	if self:GetScript('OnClick') then
-		self:GetScript('OnClick')(self, 'LeftButton')
+
+	-- Fall back to default behavior: place cursor item into this slot
+	if PickupContainerItem then
+		PickupContainerItem(self.bag, self.slot)
 	end
 end
 
